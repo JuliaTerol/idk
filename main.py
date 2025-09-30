@@ -27,17 +27,17 @@ room = 0
 direction = [0, 1, 2, 3]
 
 def changeRoom(room, direction):
-    while room != 8:
+    while room < 8:
         y = random.randrange(4)
         room = 0
         if maze[room][y] == -1:
             print('You have hit a wall.')
-            return room  # stay in same room
+            room  # stay in same room
         else:
             newRoom = maze[room][y]
             print(f'You moved from room {room} to room {newRoom}.')
             # return newRoom
-        room = newRoom
+            room = newRoom
 
 # Directions: 0 = North, 1 = East, 2 = South, 3 = West
 room = changeRoom(room, direction) 
